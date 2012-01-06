@@ -6,9 +6,10 @@ Version: 0.1
 SharePastes is a simple Python script that lets users paste text,
 code snippets to Pastebin.com without opening their web browser.
 
-------------------
-How does this work
-------------------
+-----------------------------
+PREPARING SHAREPASTES FOR USE
+-----------------------------
+
 1. Get the latest copy of SharePastes from
    https://github.com/vaidikkp/sharepastes.
 2. Change directory to the cloned copy of sharepastes.
@@ -28,8 +29,26 @@ How does this work
 
 And you are good to go!
 
+------------------
+TO USE SHAREPASTES
+------------------
+
+1. Copy any code snippet to clipboard.
+2. Press the keyboard shortcut you had set in the previous section
+   at step 9.
+3. If everything went smoothly, URL for your paste on Pastebin.com
+   will be copied to your clipboard. Use Ctrl+v to paste it.
+
+-------
+LICENSE
+-------
+
 This project is Free Software liscenced under the GNU Affero General
 Public License. A copy of the license is present in the root of the
 repository.
+
+---------------
+PROJECT HOSTING
+---------------
 
 This project is hosted at https://github.com/vaidikkp/sharepastes.
