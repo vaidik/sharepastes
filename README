@@ -1,0 +1,35 @@
+SharePastes
+
+Author: Vaidik Kapoor <kapoor.vaidik@gmail.com>
+Version: 0.1
+
+SharePastes is a simple Python script that lets users paste text,
+code snippets to Pastebin.com without opening their web browser.
+
+------------------
+How does this work
+------------------
+1. Get the latest copy of SharePastes from
+   https://github.com/vaidikkp/sharepastes.
+2. Change directory to the cloned copy of sharepastes.
+3. Open api_user_key_generator.py in your favorite text editor.
+4. Provide your Pastebin.com username, password and api_dev_key.
+   Get your api_dev_key from http://pastebin.com/api#1.
+5. Use api_user_key_generator.py to generate your api_user_key. Run
+   this command to execute the script:
+
+   python api_user_key_generator.py
+6. Copy the api_user_key.
+7. Open sharepastes.py in your favorite text editor.
+8. Provide your api_dev_key, api_user_key in that file.
+9. Set a keyboard shortcut to run the following command:
+
+   python /<path-to-sharepastes-cloned-copy/sharepastes.py
+
+And you are good to go!
+
+This project is Free Software liscenced under the GNU Affero General
+Public License. A copy of the license is present in the root of the
+repository.
+
+This project is hosted at https://github.com/vaidikkp/sharepastes.
