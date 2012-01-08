@@ -20,6 +20,7 @@ url = 'http://pastebin.com/api/api_post.php'
 import pynotify
 import re
 import urllib2
+from time import sleep
 from urllib import urlencode
 
 import pygtk
@@ -27,18 +28,21 @@ pygtk.require('2.0')
 import gtk
 
 clipboard = gtk.clipboard_get()
+init = pynotify.init('SharePastes')
 
 params['api_paste_code'] = clipboard.wait_for_text()
 params['api_paste_name'] = ''
 
+n = pynotify.Notification('Working', 'SharePastes is trying to submit text to Pastebin.com')
+n.show()
 request = urllib2.Request(url, urlencode(params))
 response = urllib2.urlopen(request)
+n.close()
 
 response = response.read()
 regex = re.compile('http://pastebin.com/*')
 result = regex.match(response)
 
-init = pynotify.init('SharePastes')
 
 if result:
     clipboard.set_text(response)
@@ -48,4 +52,5 @@ else:
     n = pynotify.Notification('Error', 'Couldn\'t submit the latest text from your clipboard.', 'dialog-error')
 
 n.show()
-
+sleep(5)
+n.close()
