@@ -1,19 +1,14 @@
-import gtk
 import importlib
 import json
 import optparse
 import os
 import sys
+import xerox
 
 
 class BaseSharePastes(object):
-    _clipboard = gtk.clipboard_get()
-
     def __init__(self):
         pass
-
-    def get_copied_text(self):
-        return self._clipboard.wait_for_text()
 
     def api_call(self, text):
         pass
@@ -76,7 +71,11 @@ def main():
         using = 'pastebin'
 
     obj = SharePastesFactory.create(using)
-    obj.api_call(obj.get_copied_text())
+    try:
+        obj.api_call(xerox.paste)
+    except xerox.base.XclipNotFound:
+        print 'xclip not found. Install xclip for SharePastes to work.'
+        sys.exit(1)
 
 
 if __name__ == '__main__':
