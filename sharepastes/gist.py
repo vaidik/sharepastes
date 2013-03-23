@@ -81,3 +81,6 @@ class gist(BaseSharePastes):
             print 'Done ' + r.url
         except HTTPError:
             print 'Error'
+            sys.exit(1)
+
+        return r.url

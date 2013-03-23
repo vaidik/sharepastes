@@ -85,3 +85,5 @@ class pastebin(BaseSharePastes):
             print resp.text
         else:
             print 'Error'
+
+        return resp.text

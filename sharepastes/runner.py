@@ -21,7 +21,7 @@ def main():
 
     obj = SharePastesFactory.create(using)
     try:
-        obj.api_call(xerox.paste())
+        xerox.copy(obj.api_call(xerox.paste()))
     except xerox.base.XclipNotFound:
         print 'xclip not found. Install xclip for SharePastes to work.'
         sys.exit(1)
