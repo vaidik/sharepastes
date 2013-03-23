@@ -27,6 +27,10 @@ So this is what you have to do:
    where `<service-name>` is the service that you want to use:
     - `gist` for Github's Gist
     - `pastebin` for Pastebin.com
+3. After successful execution of the above command, you will get link to your
+   post in your terminal and the same will be copied to your clipboard as well.
+4. Go ahead and share it with whoever you want to. Simply use your Operating
+   System's shortcut for pasting to paste the URL.
 
 ## Creating Shortcuts
 
@@ -55,3 +59,9 @@ extended to work with any other similar service that provides an API for the
 same.
 
 *I will add more documentation for this soon.*
+
+## What's next?
+
+1. Perhaps support for more used services.
+2. OS notifications using something like PyNotify for Linux and similar for
+   Mac OS and Windows.
