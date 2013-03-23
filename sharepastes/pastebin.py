@@ -35,6 +35,10 @@ class pastebin(BaseSharePastes):
         config = get_config()
 
         def collect_client_keys():
+            print '''
+Your Pastebin Developer Key is missing. First go to the following link and get
+your Developer API Key: http://pastebin.com/api#1.
+            '''
             developer_key = raw_input('Pastebin Developer API Key: ')
 
             pb_config = {
@@ -51,6 +55,10 @@ class pastebin(BaseSharePastes):
             if not pb_config.get('dev_key', None):
                 collect_client_keys()
 
+        print '''
+Now you must login so that SharePastes can get your API User Key. SharePastes
+does not store passwords.
+        '''
         username = raw_input('Pastebin Username: ')
         password = getpass('Pastebin Password: ')
 

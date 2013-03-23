@@ -16,6 +16,11 @@ class gist(BaseSharePastes):
         config = get_config()
 
         def collect_client_keys():
+            print '''
+Your Github Client Application Keys are missing. First go to the following
+link: https://github.com/settings/applications. Create a new application and
+generate client keys for SharePastes.
+            '''
             client_id = raw_input('Github Client ID: ')
             client_secret = raw_input('Github Client Secret: ')
 
@@ -41,6 +46,10 @@ class gist(BaseSharePastes):
         else:
             collect_client_keys()
 
+        print '''
+Now you must login so that SharePastes can get your API token. SharePastes
+does not store passwords.
+        '''
         username = raw_input('Github Username: ')
         password = getpass('Github Password: ')
 
@@ -78,9 +87,9 @@ class gist(BaseSharePastes):
         try:
             r = gh.gists.create(dict(description='', public=True,
                                 files={'sharepaste': {'content': text}}))
-            print 'Done ' + r.url
+            print r.html_url
         except HTTPError:
             print 'Error'
             sys.exit(1)
 
-        return r.url
+        return r.html_url
