@@ -3,8 +3,8 @@ import requests
 import sys
 
 from getpass import getpass
-from .sharepastes import BaseSharePastes
-from .sharepastes import get_config
+from .core import BaseSharePastes
+from .core import get_config
 
 
 class pastebin(BaseSharePastes):
