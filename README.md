@@ -15,6 +15,9 @@ can use to quickly share whatever you have copied to your clipboard.
    1. `yum install xclip` for Fedora.
    2. `apt-get install xclip` for Ubuntu.
 
+## Installation
+
+`sudo pip install https://github.com/vaidikkp/sharepastes/archive/master.zip`
 
 ## How to use?
 
