@@ -1,8 +1,6 @@
 import json
-import optparse
 import os
 import sys
-import xerox
 
 from importlib import import_module
 
@@ -22,13 +20,21 @@ class SharePastesFactory(object):
             return getattr(import_module('.%s' % type, 'sharepastes'),
                            type)()
         except ImportError:
-            raise
             print 'The service %s does not work with SharePastes.' % type
             sys.exit(1)
 
 
-class ConfigFile(object):
+class Config(object):
     file_path = os.path.join(os.path.expanduser('~'), '.sharepastes.config')
+    config = None
+
+    @staticmethod
+    def get():
+        if not Config.config:
+            config = Config()
+            config.load()
+
+        return config
 
     def load(self):
         try:
@@ -42,17 +48,3 @@ class ConfigFile(object):
         f = open(self.file_path, 'w')
         f.write(json.dumps(self.config))
         f.close()
-
-
-# The common CONFIG object for every module
-CONFIG = None
-
-
-# function to return the CONFIG object
-def get_config():
-    global CONFIG
-    if not CONFIG:
-        CONFIG = ConfigFile()
-        CONFIG.load()
-
-    return CONFIG

@@ -6,14 +6,14 @@ from getpass import getpass
 from pygithub3 import Github
 from requests.exceptions import HTTPError
 from .core import BaseSharePastes
-from .core import get_config
+from .core import Config
 
 
 class gist(BaseSharePastes):
     _auth_url = 'https://api.github.com/authorizations'
 
     def _generate_keys(self):
-        config = get_config()
+        config = Config.get()
 
         def collect_client_keys():
             print '''
@@ -74,7 +74,7 @@ does not store passwords.
             config.save()
 
     def api_call(self, text):
-        config = get_config()
+        config = Config.get()
         try:
             token = config.config['gist']['token']
         except KeyError:

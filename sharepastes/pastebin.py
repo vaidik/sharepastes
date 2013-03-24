@@ -4,7 +4,7 @@ import sys
 
 from getpass import getpass
 from .core import BaseSharePastes
-from .core import get_config
+from .core import Config
 
 
 class pastebin(BaseSharePastes):
@@ -18,7 +18,7 @@ class pastebin(BaseSharePastes):
     }
 
     def __init__(self):
-        config = get_config()
+        config = Config.get()
 
         try:
             self.set_keys(config.config['pastebin']['dev_key'],
@@ -32,7 +32,7 @@ class pastebin(BaseSharePastes):
         self.params.update(api_dev_key=api_dev_key, api_user_key=api_user_key)
 
     def _generate_keys(self):
-        config = get_config()
+        config = Config.get()
 
         def collect_client_keys():
             print '''
