@@ -23,4 +23,4 @@ can use to quickly share whatever you have copied to your clipboard.
 
 [Documentation available here][Docs]
 
-[Docs]: http://vaidikkp.github.com/sharepastes
+[Docs]: https://sharepastes.readthedocs.org/en/latest/
