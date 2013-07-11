@@ -21,10 +21,18 @@ def main():
 
     obj = SharePastesFactory.create(using)
     try:
-        xerox.copy(obj.api_call(xerox.paste()))
+        url = obj.api_call(xerox.paste())
+        xerox.copy(url)
     except xerox.base.XclipNotFound:
         print 'xclip not found. Install xclip for SharePastes to work.'
         sys.exit(1)
+
+    try:
+        from pync import Notifier
+        Notifier.notify('URL added to your clipboard %s.' % url,
+                        title='SharePastes')
+    except:
+        pass
 
 
 if __name__ == '__main__':
