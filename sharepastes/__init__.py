@@ -9,6 +9,11 @@ from .core import BaseSharePastes
 from .core import Config
 from .core import SharePastesFactory
 
+extensions = {
+	'gist': ('gist', 'gist'),
+	'pastebin': ('pastebin', 'pastebin'),
+}
+
 __author__ = "Vaidik Kapoor <kapoor.vaidik@gmail.com>"
 __license__ = "MIT"
 __version__ = ".".join(map(str, (0, 2, 0)))

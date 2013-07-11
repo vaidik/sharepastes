@@ -29,8 +29,10 @@ class SharePastesFactory(object):
     @staticmethod
     def create(type='pastebin'):
         try:
-            return getattr(import_module('.%s' % type, 'sharepastes'),
-                           type)()
+            from . import extensions
+            return getattr(import_module('.%s' % extensions[type][0],
+                                         'sharepastes'),
+                           extensions[type][1])()
         except ImportError:
             print 'The service %s does not work with SharePastes.' % type
             sys.exit(1)
