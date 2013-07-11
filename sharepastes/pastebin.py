@@ -7,7 +7,7 @@ from .core import BaseSharePastes
 from .core import Config
 
 
-class pastebin(BaseSharePastes):
+class Pastebin(BaseSharePastes):
     url = 'http://pastebin.com/api/api_post.php'
     params = {
         'api_dev_key': '',
@@ -22,11 +22,11 @@ class pastebin(BaseSharePastes):
 
         try:
             self.set_keys(config.config['pastebin']['dev_key'],
-                         config.config['pastebin']['user_key'])
+                          config.config['pastebin']['user_key'])
         except KeyError:
             self._generate_keys()
             self.set_keys(config.config['pastebin']['dev_key'],
-                         config.config['pastebin']['user_key'])
+                          config.config['pastebin']['user_key'])
 
     def set_keys(self, api_dev_key='', api_user_key=''):
         self.params.update(api_dev_key=api_dev_key, api_user_key=api_user_key)

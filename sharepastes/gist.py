@@ -9,7 +9,7 @@ from .core import BaseSharePastes
 from .core import Config
 
 
-class gist(BaseSharePastes):
+class Gist(BaseSharePastes):
     _auth_url = 'https://api.github.com/authorizations'
 
     def _generate_keys(self):
@@ -39,7 +39,9 @@ generate client keys for SharePastes.
 
         gist_config = config.config.get('gist', None)
         if gist_config:
-            if gist_config.get('client_id', None) and gist_config.get('client_secret', None):
+            if gist_config.get('client_id',
+                               None) and gist_config.get('client_secret',
+                                                         None):
                 pass
             else:
                 collect_client_keys()

@@ -10,8 +10,8 @@ from .core import Config
 from .core import SharePastesFactory
 
 extensions = {
-	'gist': ('gist', 'gist'),
-	'pastebin': ('pastebin', 'pastebin'),
+    'gist': ('gist', 'Gist'),
+    'pastebin': ('pastebin', 'Pastebin'),
 }
 
 __author__ = "Vaidik Kapoor <kapoor.vaidik@gmail.com>"
