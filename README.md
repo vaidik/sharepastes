@@ -1,7 +1,11 @@
 # SharePastes
 
-Helps you quickly share code snippets via various services like Github Gist and
-PasteBin.com.
+Helps you quickly share code snippets via various services like
+[Github Gist][GG], [Pastebin][P] and [Mozilla's Pastebin][MP].
+
+[GG]: http://gist.github.com
+[P]: http://pastebin.com
+[MP]: http://www.pastebin.mozilla.org
 
 ## What does SharePastes do?
 
