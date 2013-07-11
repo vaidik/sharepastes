@@ -12,6 +12,7 @@ from .core import SharePastesFactory
 extensions = {
     'gist': ('gist', 'Gist'),
     'pastebin': ('pastebin', 'Pastebin'),
+    'mozpastebin': ('mozpastebin', 'MozPastebin'),
 }
 
 __author__ = "Vaidik Kapoor <kapoor.vaidik@gmail.com>"
