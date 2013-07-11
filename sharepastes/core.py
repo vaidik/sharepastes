@@ -47,17 +47,17 @@ class Config(object):
     config = None
     """ Static variable that holds the singleton `Config`_ object."""
 
-    @staticmethod
-    def get():
+    @classmethod
+    def get(cls):
         """ Get the static Config object.
 
         :returns: the singleton *Config* object.
         """
-        if not Config.config:
-            config = Config()
-            config.load()
+        if not cls.config:
+            cls.config = Config()
+            cls.config.load()
 
-        return config
+        return cls.config
 
     def load(self):
         """ Forcefully reload the configuration from the config file. """
